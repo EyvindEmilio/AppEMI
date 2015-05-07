@@ -3,18 +3,19 @@
 
     <string name="title_activity_main">MainActivity</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section_inicio">INICIO</string>
+    <string name="title_section_acercaemi">ACERCA DE LA EMI</string>
+    <string name="title_section_grado">GRADO</string>
+    <string name="title_section_postgrado">POSTGRADO</string>
 
-
-    <string name="title_section_login">Login</string>
-    <string name="title_section_about">Acerca de</string>
+    <string name="title_section_login">LOGIN</string>
+    <string name="title_section_partes">PARTE DIARIO</string>
+    <string name="title_section_about">ACERCA DE</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_example">Example action</string>
+    <string name="action_example">Compartir</string>
 
     <string name="action_settings">Settings</string>
 </resources>

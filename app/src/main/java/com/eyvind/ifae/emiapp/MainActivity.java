@@ -38,21 +38,56 @@ public class MainActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment fragment = null;
+        switch (position){
+            case 0:
+                fragment = PlaceholderFragment.newInstance(position+1);
+                break;
+            case 1:
+                fragment = PlaceholderFragment.newInstance(position+1);
+                break;
+            case 2:
+                fragment = PlaceholderFragment.newInstance(position+1);
+                break;
+            case 3:
+                fragment = PlaceholderFragment.newInstance(position+1);
+                break;
+            case 4:
+                fragment = PlaceholderFragment.newInstance(position+1);
+                break;
+            case 5:
+                fragment = PlaceholderFragment.newInstance(position+1);
+                break;
+            case 6:
+                fragment = PlaceholderFragment.newInstance(position+1);
+                break;
+        }
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+                .replace(R.id.container, fragment).commit();
     }
 
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.title_section_inicio);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
+                mTitle = getString(R.string.title_section_acercaemi);
                 break;
             case 3:
-                mTitle = getString(R.string.title_section3);
+                mTitle = getString(R.string.title_section_grado);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section_postgrado);
+                break;
+            case 5:
+                mTitle = getString(R.string.title_section_login);
+                break;
+            case 6:
+                mTitle = getString(R.string.title_section_partes);
+                break;
+            case 7:
+                mTitle = getString(R.string.title_section_about);
                 break;
         }
     }
