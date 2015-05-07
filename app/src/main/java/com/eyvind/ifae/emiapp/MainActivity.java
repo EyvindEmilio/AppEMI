@@ -41,25 +41,25 @@ public class MainActivity extends ActionBarActivity
         Fragment fragment = null;
         switch (position){
             case 0:
-                fragment = PlaceholderFragment.newInstance(position+1);
+                fragment = Fragment_INICIO.newInstance(1);
                 break;
             case 1:
-                fragment = PlaceholderFragment.newInstance(position+1);
+                fragment = Fragment_ACERCA_EMI.newInstance(position+1);
                 break;
             case 2:
-                fragment = PlaceholderFragment.newInstance(position+1);
+                fragment = Fragment_GRADO.newInstance(position+1);
                 break;
             case 3:
-                fragment = PlaceholderFragment.newInstance(position+1);
+                fragment = Fragment_POST_GRADO.newInstance(position+1);
                 break;
             case 4:
-                fragment = PlaceholderFragment.newInstance(position+1);
+                fragment = Fragment_LOGIN.newInstance(position+1);
                 break;
             case 5:
-                fragment = PlaceholderFragment.newInstance(position+1);
+                fragment = Fragment_PARTES.newInstance(position+1);
                 break;
             case 6:
-                fragment = PlaceholderFragment.newInstance(position+1);
+                fragment = Fragment_ABOUT.newInstance(position+1);
                 break;
         }
         fragmentManager.beginTransaction()
