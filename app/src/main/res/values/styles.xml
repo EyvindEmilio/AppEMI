@@ -27,7 +27,7 @@
     <!--<style name="ButtonBarButton" />-->
 
     <!-- Settings-->
-    <style name="SettingsTheme">
+    <style name="SettingsTheme" parent="AppTheme">
         <item name="actionBarTheme">@style/Theme.AppCompat.Light</item>
     </style>
 </resources>

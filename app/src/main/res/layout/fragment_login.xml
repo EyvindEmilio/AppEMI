@@ -1,9 +1,47 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.eyvind.ifae.emiapp.Fragment_INICIO">
+    android:layout_height="match_parent" tools:context="com.eyvind.ifae.emiapp.Fragment_INICIO"
+    android:background="@color/primary_background">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:weightSum="1"
+        android:layout_margin="30px">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/castillo"
+            android:minHeight="150px"
+            android:layout_weight="0.33" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/username"
+            android:hint="@string/input_login_username" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/password"
+            android:hint="@string/input_login_password" />
+
+        <Button
+            style="@style/button_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_login"
+            android:id="@+id/button" />
+
+    </LinearLayout>
 </FrameLayout>

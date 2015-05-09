@@ -1,16 +1,16 @@
 package com.eyvind.ifae.emiapp;
 
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,9 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -28,7 +29,6 @@ import android.widget.Toast;
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
 public class NavigationDrawerFragment extends Fragment {
-
 
     private static final String STATE_SELECTED_POSITION = "selected_navigation_drawer_position";
 
@@ -82,7 +82,17 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+
+        ArrayList<DrawerItem> itemsList = new ArrayList<DrawerItem>();
+
+        itemsList.add(new DrawerItem(getString(R.string.title_section_inicio),R.drawable.ic_drawer));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_acercaemi),R.drawable.ic_drawer));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_grado),R.drawable.ic_drawer));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_postgrado),R.drawable.ic_drawer));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_login),R.drawable.ic_drawer));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_partes),R.drawable.ic_drawer));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_about),R.drawable.ic_drawer));
+        /*mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
@@ -94,7 +104,12 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_section_login),
                         getString(R.string.title_section_partes),
                         getString(R.string.title_section_about),
-                }));
+                }));*/
+        mDrawerListView.setAdapter(new DrawerAdapter(
+                getActionBar().getThemedContext(),
+                R.layout.list_item_drawer,
+                itemsList));
+
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
@@ -250,3 +265,4 @@ public class NavigationDrawerFragment extends Fragment {
         void onNavigationDrawerItemSelected(int position);
     }
 }
+

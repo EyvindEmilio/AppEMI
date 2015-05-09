@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttons" parent="@android:style/Widget.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <!--<item name="android:textColor">@color/button_success_text</item>-->
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">0.6</item>
+        <!--<item name="android:background">@drawable/button_success</item>-->
+        <item name="android:padding">10dip</item>
+    </style>
+    <style name="button_success" parent="buttons">
+        <item name="android:textColor">@color/button_success_text</item>
+        <item name="android:background">@drawable/button_success</item>
+    </style>
+    <style name="button_danger" parent="buttons">
+        <item name="android:textColor">@color/button_success_text</item>
+        <item name="android:background">@drawable/button_success</item>
+    </style>
+    <style name="button_warning" parent="buttons">
+        <item name="android:textColor">@color/button_success_text</item>
+        <item name="android:background">@drawable/button_success</item>
+    </style>
+</resources>

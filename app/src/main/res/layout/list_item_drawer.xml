@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/itemLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/drawer_touch_selector">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="55dp"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/drawer_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_margin="5px" />
+
+            <TextView
+                android:id="@+id/drawer_itemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/primary_drawer_text"
+                android:layout_weight="0.91"
+                android:layout_gravity="center_vertical|left" />
+
+            <!--<TextView
+                android:id="@+id/textView"
+                android:layout_width="32px"
+                android:layout_height="32dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/primary_drawer_text"
+                android:layout_gravity="center_vertical|right"
+                android:background="@color/primary_drawer_background_badge"/>-->
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/primary_drawer_line_separator">
+        </View>
+    </LinearLayout>
+</RelativeLayout>

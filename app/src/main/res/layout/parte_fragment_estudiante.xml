@@ -1,3 +1,8 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <ListView android:id="@+id/listView1" android:layout_height="match_parent" android:layout_width="match_parent" />
+</LinearLayout>
+<!--
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,3 +13,4 @@
     android:background="@color/primary_drawer_background"
     tools:context="com.eyvind.ifae.emiapp.NavigationDrawerFragment"
     />
+-->
