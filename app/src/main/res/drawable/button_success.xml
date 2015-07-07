@@ -10,5 +10,5 @@
     <item android:state_focused="false"
         android:state_pressed="true"
         android:drawable="@color/button_success_active" />
-    <item android:drawable="@color/button_success_background" />
+    <item android:drawable="@color/button_success" />
 </selector>

@@ -1,7 +1,9 @@
 package com.eyvind.ifae.emiapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -33,23 +35,76 @@ public class Fragment_PARTES extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_partes, container, false);
+            final View rootView = inflater.inflate(R.layout.fragment_partes, container, false);
 
             super.onCreate(savedInstanceState);
             /*setContentView(R.layout.main);*/
 
             ListView listView = (ListView) rootView.findViewById(R.id.listView1);
 
-            DataHolder data = new DataHolder(rootView.getContext());
-            DataHolder data1 = new DataHolder(rootView.getContext());
-            DataHolder data2 = new DataHolder(rootView.getContext());
-            DataHolder data3 = new DataHolder(rootView.getContext());
-            DataHolder data4 = new DataHolder(rootView.getContext());
+            partesHolder data = new partesHolder("Eyvind Emilio Tinini Coaquira","9981765",rootView.getContext());
+            partesHolder data1 = new partesHolder("Eyvind 1","998",rootView.getContext());
+            partesHolder data2 = new partesHolder("Judy Adriana Quispe Geronimo","998",rootView.getContext());
+            partesHolder data3 = new partesHolder("Eyvind 3","998",rootView.getContext());
+            partesHolder data4 = new partesHolder("Eyvind 4","998",rootView.getContext());
 
-            DataAdapter d = new DataAdapter((Activity)rootView.getContext(), R.layout.parte_item_estudiante, new DataHolder[] { data, data1, data2, data3, data4 } );
+            ListaAdapter myAdapter = new ListaAdapter((Activity)rootView.getContext(), R.layout.parte_item_estudiante, new partesHolder[] { data, data1, data2, data3, data4 } );
 
-            listView.setAdapter(d);
+            listView.setLongClickable(true);
+            listView.setClickable(true);
+            registerForContextMenu(listView);
+            listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    Log.e("Mensaje", "LONG");
+                    AlertDialog.Builder aler = new AlertDialog.Builder(rootView.getContext());
+                    aler.setPositiveButton("Hola", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
+                        }
+                    });
+                    aler.setNegativeButton("dsa", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    AlertDialog ll = aler.create();
+                    ll.show();
+                    return false;
+                }
+            });
+
+            listView.setOnLongClickListener(new AdapterView.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Log.e("Mensaje", "LONG");
+                    return false;
+                }
+
+
+                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                    Log.e("Mensaje", "LONG");
+                    AlertDialog.Builder aler = new AlertDialog.Builder(rootView.getContext());
+                    aler.setPositiveButton("Hola", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    aler.setNegativeButton("dsa", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    AlertDialog ll = aler.create();
+                    ll.show();
+                    return false;
+                }
+            });
+            listView.setAdapter(myAdapter);
             return rootView;
         }
 
@@ -60,21 +115,19 @@ public class Fragment_PARTES extends Fragment {
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
 
-
-
-    public class DataAdapter extends ArrayAdapter<DataHolder> {
-
+    public class ListaAdapter extends ArrayAdapter<partesHolder> {
         private Activity myContext;
-
-        public DataAdapter(Activity context, int textViewResourceId, DataHolder[] objects) {
+        private partesHolder [] objects;
+        public ListaAdapter(Activity context, int textViewResourceId, partesHolder[] objects) {
             super(context, textViewResourceId, objects);
             myContext = context;
+            this.objects = objects;
         }
 
-        // We keep this ViewHolder object to save time. It's quicker than findViewById() when repainting.
         class ViewHolder {
-            protected DataHolder data;
-            protected TextView text;
+            protected partesHolder data;
+            protected TextView FullName;
+            protected TextView Codigo;
             protected Spinner spin;
         }
 
@@ -82,79 +135,85 @@ public class Fragment_PARTES extends Fragment {
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = null;
 
-            // Check to see if this row has already been painted once.
             if (convertView == null) {
-
-                // If it hasn't, set up everything:
                 LayoutInflater inflator = myContext.getLayoutInflater();
                 view = inflator.inflate(R.layout.parte_item_estudiante, null);
-
-                // Make a new ViewHolder for this row, and modify its data and spinner:
                 final ViewHolder viewHolder = new ViewHolder();
-                viewHolder.text = (TextView) view.findViewById(R.id.text);
-                viewHolder.data = new DataHolder(myContext);
+                viewHolder.FullName = (TextView) view.findViewById(R.id.lista_fullName);
+                viewHolder.Codigo = (TextView) view.findViewById(R.id.lista_Codigo);
+                viewHolder.data = new partesHolder(
+                        objects[position].getFullName(),
+                        objects[position].getCodigo(),
+                        myContext);
                 viewHolder.spin = (Spinner) view.findViewById(R.id.spin);
                 viewHolder.spin.setAdapter(viewHolder.data.getAdapter());
-
-                // Used to handle events when the user changes the Spinner selection:
                 viewHolder.spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
                     @Override
                     public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                        viewHolder.data.setSelected(arg2);
-                        viewHolder.text.setText(viewHolder.data.getText());
+                        //viewHolder.data.setSelected(arg2);
+                        //viewHolder.FullName.setText(viewHolder.data.getText());
                     }
 
                     @Override
                     public void onNothingSelected(AdapterView<?> arg0) {
                     }
-
                 });
 
-                // Update the TextView to reflect what's in the Spinner
-                viewHolder.text.setText(viewHolder.data.getText());
-
+                viewHolder.FullName.setText(viewHolder.data.getFullName());
+                viewHolder.FullName.setText(viewHolder.data.getCodigo());
                 view.setTag(viewHolder);
-
-                Log.d("DBGINF", viewHolder.text.getText() + "");
+                Log.d("DBGINF", viewHolder.FullName.getText() + "");
             } else {
                 view = convertView;
             }
 
-            // This is what gets called every time the ListView refreshes
             ViewHolder holder = (ViewHolder) view.getTag();
-            holder.text.setText(getItem(position).getText());
-            holder.spin.setSelection(getItem(position).getSelected());
 
+            holder.FullName.setText(getItem(position).getFullName());
+            holder.Codigo.setText(getItem(position).getCodigo());
+            holder.spin.setSelection(getItem(position).getSelected());
             return view;
         }
     }
 
-    public class DataHolder {
-
+    public class partesHolder {
         private int selected;
+        private String fullName;
+        private String Codigo;
         private ArrayAdapter<CharSequence> adapter;
-
-        public DataHolder(Context parent) {
-            adapter = ArrayAdapter.createFromResource(parent, R.array.choices, android.R.layout.simple_spinner_item);
+        public partesHolder(String full,String codigo,Context parent) {
+            fullName = full;
+            Codigo = codigo;
+            adapter = ArrayAdapter.createFromResource(parent, R.array.parametros_asistencia, android.R.layout.simple_spinner_item);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         }
 
-        public ArrayAdapter<CharSequence> getAdapter() {
-            return adapter;
+        public String getCodigo() { return Codigo; }
+
+
+        public void setCodigo(String codigo) {
+            Codigo = codigo;
         }
 
+        public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public ArrayAdapter<CharSequence> getAdapter() {
+            return adapter;
+        }
         public String getText() {
             return (String) adapter.getItem(selected);
         }
-
         public int getSelected() {
             return selected;
         }
-
         public void setSelected(int selected) {
             this.selected = selected;
         }
-
     }
-    }
+}

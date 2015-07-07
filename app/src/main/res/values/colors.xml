@@ -1,5 +1,17 @@
 <resources>
 
+    <color name="background">#34495e</color>
+    <color name="modal_header">#154875</color>
+    <color name="modal_footer">#154875</color>
+    <color name="modal_body">#2c3e50</color>
+
+
+    <!--Buttons-->
+    <color name="button_success">#5cb85c</color>
+    <color name="button_success_active">#449d44</color>
+    <color name="button_success_text">#fff</color>
+    <!--End buttons-->
+
     <color name="black_overlay">#66000000</color>
 
     <color name="primary">#2c3e50</color>
@@ -11,9 +23,7 @@
     <color name="primary_background">#bdc3c7</color>
 
     <!--Colors-->
-    <color name="button_success_background">#1abc9c</color>
-    <color name="button_success_text">#bdc3c7</color>
-    <color name="button_success_active">#16a085</color>
+
     <!--End Colors-->
     <!--Drawer-->
     <color name="primary_drawer_background">#34495e</color>

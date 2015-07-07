@@ -25,17 +25,17 @@
 <!--Preferences-->
     <string name="title_activity_settings" translatable="false">Configuraciones</string>
 
-    <string name="pref_SplashScreen_key" translatable="false">splashs_screen</string>
+    <string name="pref_SplashScreen_key" translatable="false">splash_screen</string>
     <string name="pref_SplashScreen_label">Pantalla de Inicio</string>
     <string name="pref_SplashScreen_on">Activado</string>
     <string name="pref_SplashScreen_off">No Activado</string>
-    <string name="pref_SplashScreen_default">false</string>
+    <string name="pref_SplashScreen_default">true</string>
 
     <string name="pref_Notificaciones_key" translatable="false">notificaciones</string>
     <string name="pref_Notificaciones_label">Notificaciones</string>
     <string name="pref_Notificaciones_on">Activado</string>
     <string name="pref_Notificaciones_off">No Activado</string>
-    <string name="pref_Notificaciones_default">false</string>
+    <string name="pref_Notificaciones_default">true</string>
 <!--End Preferences-->
 <!--Buttons-->
     <string name="button_login">Ingresar</string>
@@ -45,6 +45,18 @@
     <string name="input_login_password">Contraseña</string>
     <string name="input_login_username">Usuario</string>
 <!--End Inputs-->
+
+    <!--Select option assistant-->
+    <string name="seleccionar_asistencia">Seleccione Asistencia</string>
+    <string-array name="parametros_asistencia">
+        <item>Falta</item>
+        <item>Asiste</item>
+        <item>Permiso</item>
+        <item>Sin Clases</item>
+        <item>Baja Medica</item>
+        <item>Guardia</item>
+    </string-array>
+    <!--End  Select option assistant-->
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -56,4 +68,8 @@
         <item>Bravo</item>
         <item>Charlie</item>
     </string-array>
+
+    <string name="title_activity_activity__main">Ingreso</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
