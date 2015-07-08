@@ -7,15 +7,7 @@
 
     <string name="title_activity_main">MainActivity</string>
 
-<!--Drawer-->
-    <string name="title_section_inicio">INICIO</string>
-    <string name="title_section_acercaemi">ACERCA DE LA EMI</string>
-    <string name="title_section_grado">GRADO</string>
-    <string name="title_section_postgrado">POSTGRADO</string>
-    <string name="title_section_login">LOGIN</string>
-    <string name="title_section_partes">PARTE DIARIO</string>
-    <string name="title_section_about">ACERCA DE</string>
-<!--End Drawer-->
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -72,4 +64,36 @@
     <string name="title_activity_activity__main">Ingreso</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Drawer-->
+    <string name="title_section_home">Inicio</string>
+    <string name="title_section_parts_notifications">Notificaciones</string>
+    <string name="title_section_parts_classes">Parte diario</string>
+    <string name="title_section_parts_sports">Parte deportes</string>
+    <string name="title_section_list_students">Estudiantes</string>
+    <string name="title_section_about_emi">Acerca de EMI</string>
+    <string name="title_section_about">Acerca de</string>
+    <string name="title_section_settings">Configuracion</string>
+    <string name="title_section_logout">Salir</string>
+    <!--End Drawer-->
+    <!--Validator-->
+    <string name="validator_empty">El Campo no debe estar vacio</string>
+    <string name="validator_email">Correo electronico no valido</string>
+    <string name="validator_password">Contraseña no valida</string>
+    <!--End - Validator-->
+    <!--Error Messages-->
+    <string name="error_internet_connection">Revise su coneccion a internet</string>
+    <!--End - Error Messages-->
+
 </resources>

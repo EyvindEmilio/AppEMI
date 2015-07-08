@@ -73,7 +73,8 @@
                             android:textColor="#000"
                             android:textCursorDrawable="@null"
                             android:padding="5dp"
-                            android:hint="Correo electronico" />
+                            android:hint="Correo electronico"
+                            android:text="eyvind_coaquira@hotmail.com" />
                     </LinearLayout>
 
                     <TextView
@@ -102,7 +103,8 @@
                             android:textCursorDrawable="@null"
                             android:textColor="#000"
                             android:padding="5dp"
-                            android:hint="Contraseña" />
+                            android:hint="Contraseña"
+                            android:text="emilio" />
 
                     </LinearLayout>
 

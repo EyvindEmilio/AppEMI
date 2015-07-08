@@ -83,15 +83,16 @@ public class NavigationDrawerFragment extends Fragment {
             }
         });
 
-        ArrayList<DrawerItem> itemsList = new ArrayList<DrawerItem>();
+        ArrayList<DrawerItem> itemsList = new ArrayList<>();
 
-        itemsList.add(new DrawerItem(getString(R.string.title_section_inicio),R.drawable.ic_drawer));
-        itemsList.add(new DrawerItem(getString(R.string.title_section_acercaemi),R.drawable.ic_drawer));
-        itemsList.add(new DrawerItem(getString(R.string.title_section_grado),R.drawable.ic_drawer));
-        itemsList.add(new DrawerItem(getString(R.string.title_section_postgrado),R.drawable.ic_drawer));
-        itemsList.add(new DrawerItem(getString(R.string.title_section_login),R.drawable.ic_drawer));
-        itemsList.add(new DrawerItem(getString(R.string.title_section_partes),R.drawable.ic_drawer));
-        itemsList.add(new DrawerItem(getString(R.string.title_section_about),R.drawable.ic_drawer));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_home),R.drawable.ic_home));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_parts_classes),R.drawable.ic_group));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_parts_sports),R.drawable.ic_group));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_list_students),R.drawable.ic_view_list));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_settings),R.drawable.ic_settings));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_about_emi),R.drawable.ic_home));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_about),R.drawable.ic_about));
+        itemsList.add(new DrawerItem(getString(R.string.title_section_logout),R.drawable.ic_logout));
         /*mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_1,
